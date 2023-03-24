@@ -1,0 +1,1 @@
+json.partial! 'jogging_time', jogging_time: @jogging_time
