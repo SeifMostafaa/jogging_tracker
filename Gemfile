@@ -47,4 +47,5 @@ group :development do
 end
 
 gem 'jbuilder'
-
+gem 'jwt'
+gem 'bcrypt', '~> 3.1.7'
