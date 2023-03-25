@@ -2,12 +2,18 @@ class Api::JoggingTimesController < ApplicationController
   include Sift
 
   before_action :authenticate_and_set_user
+  before_action :check_user_role
+  before_action :set_jogging_time, only: [:show, :update,:destory] 
 
   # adding sift gem additionally
   filter_on :date, type: :date
 
   def index
-    @jogging_times = filtrate(JoggingTime.all)
+    if @current_user.admin?
+      @jogging_times = filtrate(JoggingTime.all)
+    else
+      @jogging_times = filtrate(current_user.jogging_times)
+    end
 
     # filtering jogging times from-to
     if params[:start_date].present? and params[:end_date].present?
@@ -18,13 +24,10 @@ class Api::JoggingTimesController < ApplicationController
   end
 
   def show
-    @jogging_time = JoggingTime.where(id: params[:id].to_i).first
     render :show
   end
 
   def update
-    @jogging_time = JoggingTime.where(id: params[:id].to_i).first
-
     if @jogging_time.update(jogging_time_params)
       render :show
     else
@@ -35,9 +38,24 @@ class Api::JoggingTimesController < ApplicationController
   end
 
   def destroy
-    @jogging_time = JoggingTime.where(id: params[:id].to_i).first
     @jogging_time.destroy
     render :show
+  end
+
+  protected
+
+  def check_user_role
+    unless (@current_user.normal_user? or @current_user.admin?)
+      render json: { errors: "Can't access this API call with your role" }
+    end
+  end
+
+  def set_jogging_time
+    if @current_user.admin?
+      @jogging_time = JoggingTime.where(id: params[:id].to_i).first
+    else
+      @jogging_time = JoggingTime.where(id: params[:id].to_i, user_id: current_user.id).first
+    end
   end
 
   private

@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
   before_action :authenticate_and_set_user
+  before_action :check_user_role
 
   # GET /users
   def index
@@ -34,6 +35,14 @@ class Api::UsersController < ApplicationController
   # DELETE /users/{username}
   def destroy
     @user.destroy
+  end
+
+  protected
+
+  def check_user_role
+    unless (@current_user.manager_user? or @current_user.admin?)
+      render json: { errors: "Can't access this API call with your role" }
+    end
   end
 
   private
