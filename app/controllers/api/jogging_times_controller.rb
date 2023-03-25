@@ -3,13 +3,13 @@ class Api::JoggingTimesController < ApplicationController
 
   before_action :authenticate_and_set_user
 
-  #adding sift gem additionally
+  # adding sift gem additionally
   filter_on :date, type: :date
 
   def index
     @jogging_times = filtrate(JoggingTime.all)
 
-    #filtering jogging times from-to
+    # filtering jogging times from-to
     if params[:start_date].present? and params[:end_date].present?
       @jogging_times = @jogging_times.where("date >= '#{params[:start_date]}' AND date <= '#{params[:end_date]}'")
     end
@@ -45,5 +45,4 @@ class Api::JoggingTimesController < ApplicationController
   def jogging_time_params
     params.require(:jogging_time).permit(:date, :distance, :time)
   end
-
 end
