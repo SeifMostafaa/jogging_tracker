@@ -1,4 +1,5 @@
 class Api::JoggingTimesController < ApplicationController
+  before_action :authenticate_and_set_user
 
   def index
     @jogging_times = JoggingTime.all
