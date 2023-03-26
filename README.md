@@ -66,7 +66,6 @@
 #### DELETE /users/sign_out
 
 * General: Logging an existing user out of the system
-  ```
 * Return:
   ```
   {
@@ -117,7 +116,7 @@
 
 * General: Get a specific user
 * Return:
-  ```
+```
     {
         "id": 1,
         "name": "seif_admin",
@@ -127,7 +126,7 @@
         "updated_at": "2023-03-26T20:21:49.074Z",
         "role": "admin"
     }
-   ```
+```
 
 
 
@@ -135,7 +134,7 @@
 
 * General: Update a specific user
 * Return:
-  ```
+```
     {
         "id": 1,
         "name": "seif_admin",
@@ -145,13 +144,13 @@
         "updated_at": "2023-03-26T20:21:49.074Z",
         "role": "admin"
     }
-   ```
+```
    
 #### DELETE /api/users/:id (Admin and Manager only role)
 
 * General: Delete a specific user
 * Return:
-  ```
+```
     {
         "id": 1,
         "name": "seif_admin",
@@ -161,13 +160,13 @@
         "updated_at": "2023-03-26T20:21:49.074Z",
         "role": "admin"
     }
-   ```
+```
    
 #### GET /api/jogging_times
 
 * General: Get all jogging times for all users for admin role, and all jogging times for the current user for normal and manager role
 * Return:
-  ```
+```
 [
     {
         "id": 1,
@@ -194,14 +193,14 @@
         "updated_at": "2023-03-26T20:21:49.543Z"
     }
 ]
-   ```
+```
    
    
 #### GET /api/jogging_times/:id
 
 * General: Get specific jogging time for all users for admin role, and specific jogging time for the current user for normal and manager role
 * Return:
-  ```
+```
 {
     "id": 1,
     "date": "2023-03-26",
@@ -210,13 +209,13 @@
     "created_at": "2023-03-26T20:21:49.520Z",
     "updated_at": "2023-03-26T20:21:49.520Z"
 }
-   ```
+```
    
 #### UPDATE /api/jogging_times/:id
 
 * General: Update specific jogging time for all users for admin role, and specific jogging time for the current user for normal and manager role
 * Return:
-  ```
+```
 {
     "id": 1,
     "date": "2023-03-26",
@@ -225,14 +224,14 @@
     "created_at": "2023-03-26T20:21:49.520Z",
     "updated_at": "2023-03-26T20:21:49.520Z"
 }
-   ```
+ ```
    
    
 #### DELETE /api/jogging_times/:id
 
 * General: Delete specific jogging time for all users for admin role, and specific jogging time for the current user for normal and manager role
 * Return:
-  ```
+```
 {
     "id": 1,
     "date": "2023-03-26",
@@ -241,18 +240,18 @@
     "created_at": "2023-03-26T20:21:49.520Z",
     "updated_at": "2023-03-26T20:21:49.520Z"
 }
-   ```
+ ```
    
 #### GET /api/weekly_report
 
 * General: Get a weekly report with average speed, average distance, week starting day and week ending day
 * Return:
-  ```
+```
 {
     "average_speed": 10.0,
     "average_distance": 10.0,
     "current_week_started_at": "2023-03-20",
     "current_week_ends_at": "2023-03-26"
 }
-   ```
+ ```
    
