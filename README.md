@@ -17,6 +17,30 @@
 - ```rails db:seed```
 - ```rails s```
 
+## Seeded Data
+```
+    {
+        "id": 1,
+        "name": "seif_admin",
+        "email": "seif_admin@swiftx.com",
+        "password": "seif123456",
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "name": "seif_manager",
+        "email": "seif_manager@swiftx.com",
+        "password": "seif123456",
+        "role": "user_manager"
+    },
+    {
+        "id": 3,
+        "name": "seif_user",
+        "email": "seif_user@swiftx.com",
+        "password": "seif123456",
+        "role": "normal_user"
+    }
+```
 
 
 ## API Reference
