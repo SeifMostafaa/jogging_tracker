@@ -10,6 +10,6 @@ User.create!(name: "seif_admin", email: "seif_admin@swiftx.com", password: "seif
 User.create!(name: "seif_manager", email: "seif_manager@swiftx.com", password: "seif123456", password_confirmation: "seif123456", role: "user_manager")
 User.create!(name: "seif_user", email: "seif_user@swiftx.com", password: "seif123456", password_confirmation: "seif123456", role: "normal_user")
 
-JoggingTime.create!(date: Date.today, distance: 10, time: DateTime.now, user_id: 1)
-JoggingTime.create!(date: Date.today, distance: 20, time: DateTime.now, user_id: 2)
-JoggingTime.create!(date: Date.today, distance: 30, time: DateTime.now, user_id: 3)
+JoggingTime.create!(date: Date.today, distance: 10, time: 1, user_id: 1)
+JoggingTime.create!(date: Date.today, distance: 20, time: 2, user_id: 2)
+JoggingTime.create!(date: Date.today, distance: 30, time: 3, user_id: 3)

@@ -42,6 +42,14 @@ class Api::JoggingTimesController < ApplicationController
     render :show
   end
 
+  def weekly_report
+    values = JoggingTime.get_weekly_report(current_user)
+    render json: { average_speed: values[0] / values[1], 
+                   average_distance: values[0],
+                   current_week_started_at: values[2],
+                   current_week_ends_at: values[3]  }
+  end
+
   protected
 
   def check_user_role

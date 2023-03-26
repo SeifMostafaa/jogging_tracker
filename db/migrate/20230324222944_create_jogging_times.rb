@@ -3,7 +3,7 @@ class CreateJoggingTimes < ActiveRecord::Migration[7.0]
     create_table :jogging_times do |t|
       t.date :date
       t.float :distance
-      t.time :time
+      t.float :time
 
       t.timestamps
     end
