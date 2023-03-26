@@ -27,13 +27,13 @@
 
 * General: Creating new user
 * Message body:
-    ```
+```
   {
       "email": "seif@swiftx.com",
       "password": "seif123456",
       "password_confirmation": "seif123456"
   }    
-  ```
+```
 * Return:
   ```
   {
@@ -48,19 +48,19 @@
 
 * General: Logging an existing user
 * Message body:
-      ```
+```
   {
       "email": "seif@swiftx.com",
       "password": "seif123456"
   }
-  ```
+```
 * Return:
-  ```
+```
   {
       "status": "success",
       "message": "Signed in successfully"
   }
-   ```
+```
 * Make sure to use the token as Bearer authenticity token
 
 #### DELETE /users/sign_out
